@@ -1,64 +1,65 @@
 import React from "react";
-import { InfinityIcon, LayoutDashboard } from "lucide-react";
+import { ChartPie, LayoutDashboard, LogOut, Mail, Settings, Wallet, WalletCards } from "lucide-react";
 import Logo from "../../assets/Logo.png"
 
 const menuItems = [
   {
-    id: "dashboard",
+    id: "overview",
     icon: LayoutDashboard,
-    label: "Dashboard",
+    label: "Overview",
     active: true,
     badge: "New",
   },
 
   {
-    id: "dashboard",
-    icon: LayoutDashboard,
-    label: "Dashboard",
+    id: "chart",
+    icon: ChartPie,
+    label: "Chart ",
   },
 
   {
-    id: "dashboard",
-    icon: LayoutDashboard,
-    label: "Dashboard",
+    id: "transactions",
+    icon: WalletCards,
+    label: "Transactions",
   },
 
   {
-    id: "dashboard",
-    icon: LayoutDashboard,
-    label: "Dashboard",
+    id: "wallet",
+    icon: Wallet,
+    label: "Wallet",
   },
 
   {
-    id: "dashboard",
-    icon: LayoutDashboard,
-    label: "Dashboard",
+    id: "mail box",
+    icon: Mail,
+    label: "Mail Box",
   },
 
   {
-    id: "dashboard",
-    icon: LayoutDashboard,
-    label: "Dashboard",
+    id: "setting",
+    icon: Settings,
+    label: "Setting",
   },
 
   {
-    id: "dashboard",
-    icon: LayoutDashboard,
-    label: "Dashboard",
+    id: "logout",
+    icon: LogOut,
+    label: "Logout",
   },
 ];
 
 function Sidebar() {
   return (
     <div
-      className="w-72 transition duration-300 ease-in-out bg-gray-500 dark:bg-slate-50 backdrop-blur-xl  border-slate-200/50
+      className="w-62 transition duration-300 ease-in-out bg-gray-500 dark:bg-slate-50 backdrop-blur-xl  border-slate-200/50
      flex flex-col relative z-10"
     >
       {/* CryptX Logo part */}
       <div className="p-6 ">
         <div className="flex items-center space-x-0.1">
           <div className="w-18 h-10  rounded-xl flex items-center justify-center">
-            <img src={Logo} alt="CryptX logo" className="h-14 w-14 md:h-20 md:w-20 object-contain" />
+            <img src={Logo} alt="CryptX logo" className="h-20 w-20 object-contain" />
+            
           </div>
 
 
