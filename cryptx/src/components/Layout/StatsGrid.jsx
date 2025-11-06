@@ -1,9 +1,9 @@
 import { ArrowDownRight, ArrowUpRight } from "lucide-react";
 import React from "react";
-import BitcoinImg from "../../assets/Bitcoin.png";
-import EthereumImg from "../../assets/Ethereum.png";
-import LitecoinImg from "../../assets/Litecoin.png";
-import CardanoImg from "../../assets/Cordano.png";
+import Bitcoin from "../../assets/Bitcoin.png";
+import Ethereum from "../../assets/Ethereum.png";
+import Litecoin from "../../assets/Litecoin.png";
+import Cardano from "../../assets/Cordano.png";
 
 const stats = [
     {
@@ -11,7 +11,7 @@ const stats = [
     value:"$40,291",
     change:"+0.25%",
     trend:"up",
-    image: BitcoinImg,
+    image: Bitcoin,
     
     
 },
@@ -20,7 +20,7 @@ const stats = [
     value:"$18,291",
     change:"+0.25%",
     trend:"up",
-    image: EthereumImg,
+    image: Ethereum,
     
     
 },
@@ -29,7 +29,7 @@ const stats = [
     value:"$8,291",
     change:"+0.25%",
     trend:"up",
-    image: LitecoinImg,
+    image: Litecoin,
    
     
 },
@@ -38,7 +38,7 @@ const stats = [
     value:"$3,291",
     change:"-2.05%",
     trend:"down",
-    image: CardanoImg,
+    image: Cardano,
     
 },
 ]
@@ -49,17 +49,13 @@ function StatsGrid() {
       {stats.map((stat, index)=>{
         {/* The Crypto Stats */}
       return (<div
-        className="bg-white dark:bg-slate-50 backdrop-blur-xl rounded-2xl p-6  
-  shadow-md shadow-slate-200/30 
-  hover:shadow-xl hover:shadow-slate-200/40
-  dark:shadow-slate-900/10 dark:hover:shadow-slate-900/20
-  transition-all duration-300 group" key={index}
-      >
+        className="bg-white dark:bg-slate-50 backdrop-blur-xl rounded-2xl p-6 shadow-md shadow-slate-200/30 hover:shadow-xl hover:shadow-slate-200/40
+        dark:shadow-slate-900/10 dark:hover:shadow-slate-900/20 transition-all duration-300 group" key={index}>
         <div className="flex items-start justify-between">
           <div className="flex-1">
             {/* The Crypto Logo */}
             <div className="mb-3">
-               <div className={`w-12 h-12 ${stat.bgColor} rounded-xl flex items-center justify-center p-2`}>
+               <div className={`w-12 h-12 rounded-xl flex items-center justify-center p-2`}>
                  <img src={stat.image} alt={`${stat.title} logo`} className='w-12 h-12 object-contain group-hover:scale-110 transition-all duration-300'/>
                </div>
             </div>
@@ -75,6 +71,8 @@ function StatsGrid() {
                   <ArrowUpRight className="w-4 h-4 text-emerald-500"/> : 
                   <ArrowDownRight className="w-4 h-4 text-red-500"/>
                 }
+
+                {/* if the arrow is up it turns green and if the arrow is down it turns red */}
                 <span className={`text-sm font-semibold ${stat.trend === "up" ? "text-emerald-500" : "text-red-500"}`}>
                   {stat.change}
                 </span>
