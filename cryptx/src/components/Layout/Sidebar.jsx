@@ -1,6 +1,6 @@
 import React from "react";
-import { ChartPie, LayoutDashboard, LogOut, Mail, Settings, Wallet, WalletCards } from "lucide-react";
-import Logo from "../../assets/Logo.png"
+import { ChartPie, LayoutDashboard, LogOut, Mail, Settings, Wallet, WalletCards} from "lucide-react";
+import Logo from "../../assets/Logo.png";
 
 const menuItems = [
   {
@@ -54,16 +54,13 @@ function Sidebar() {
       className="w-62 transition duration-300 ease-in-out bg-gray-500 dark:bg-slate-50 backdrop-blur-xl  border-slate-200/50
      flex flex-col relative z-10"
     >
-      {/* CryptX Logo part */}
-      <div className="p-6 ">
-        <div className="flex items-center space-x-0.1">
-          <div className="w-18 h-10  rounded-xl flex items-center justify-center">
-            <img src={Logo} alt="CryptX logo" className="h-20 w-20 object-contain" />
-            
-          </div>
-
-
-          
+      <div className="p-6">
+        <div className="flex items-center">
+          <img
+            src={Logo}
+            alt="CryptX logo"
+            className="h-32 w-auto object-contain"
+          />
         </div>
       </div>
 

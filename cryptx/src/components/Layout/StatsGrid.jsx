@@ -1,46 +1,52 @@
 import { ArrowDownRight, ArrowUpRight } from "lucide-react";
 import React from "react";
-
+import BitcoinImg from "../../assets/Bitcoin.png";
+import EthereumImg from "../../assets/Ethereum.png";
+import LitecoinImg from "../../assets/Litecoin.png";
+import CardanoImg from "../../assets/Cordano.png";
 
 const stats = [
     {
     title:"Bitcoin (BTC)",
     value:"$40,291",
-    change:"-5.8%",
+    change:"+0.25%",
     trend:"up",
-    image:"../../assets/Bitcoin.png",
+    image: BitcoinImg,
+    
     
 },
 {
     title:"Ethereum (ETH)",
     value:"$18,291",
-    change:"-5.8%",
+    change:"+0.25%",
     trend:"up",
-    image:"../../assets/Ethereum.png",
+    image: EthereumImg,
+    
     
 },
 {
     title:"Litecoin (LTC)",
-    value:" $8,291",
-    change:"-5.8%",
+    value:"$8,291",
+    change:"+0.25%",
     trend:"up",
-    image:"../../assets/Litecoin.png",
+    image: LitecoinImg,
+   
     
 },
 {
-    title:"Cardano (ADA) ",
+    title:"Cardano (ADA)",
     value:"$3,291",
-    change:"-5.8%",
+    change:"-2.05%",
     trend:"down",
-    image:"../../assets/Cordano.png",
+    image: CardanoImg,
     
 },
 ]
 
 function StatsGrid() {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-2 xl:grid-cols-6 gap-4">
-      {stats.map((stats, index)=>{
+    <div className="grid grid-cols-2 gap-4 max-w-xl">
+      {stats.map((stat, index)=>{
         {/* The Crypto Stats */}
       return (<div
         className="bg-white dark:bg-slate-50 backdrop-blur-xl rounded-2xl p-6  
@@ -51,24 +57,33 @@ function StatsGrid() {
       >
         <div className="flex items-start justify-between">
           <div className="flex-1">
-            <p className="text-sm font-medium text-slate-600 dark:text-slate-400 mb-2">
-               <img src={stats.image} alt='CRYPTO LOGO' className='w-10 h-10 object-cover group-hover:scale-105 transition-all duration-300'/>
+            {/* The Crypto Logo */}
+            <div className="mb-3">
+               <div className={`w-12 h-12 ${stat.bgColor} rounded-xl flex items-center justify-center p-2`}>
+                 <img src={stat.image} alt={`${stat.title} logo`} className='w-12 h-12 object-contain group-hover:scale-110 transition-all duration-300'/>
+               </div>
+            </div>
+            
+            {/* The Crypto Value */}
+            <p className="text-3xl font-bold text-black dark-white mb-3">
+              {stat.value}
             </p>
-            <p className="text-3xl font-bold text-black dark-white mb-4">
-              {stats.value}
-            </p>
+            
+            {/* The trend line and name of currency */}
             <div className="flex items-center space-x-2">
-                {stats.trend === "up" ? <ArrowUpRight className="w-4 h-4 text-emerald-500"/> :  <ArrowDownRight className="w-4 h-4 text-red-500"/>}
-                <span className={`text-sm font-semibold ${stats.trend === "up" ? "text-emerald-500" : "text-red-500"}`}>{stats.change}</span>
+                {stat.trend === "up" ? 
+                  <ArrowUpRight className="w-4 h-4 text-emerald-500"/> : 
+                  <ArrowDownRight className="w-4 h-4 text-red-500"/>
+                }
+                <span className={`text-sm font-semibold ${stat.trend === "up" ? "text-emerald-500" : "text-red-500"}`}>
+                  {stat.change}
+                </span>
               <span className="text-sm text-slate-500 dark:text-slate-400">
-                {stats.title}
+                {stat.title}
               </span>
             </div>
           </div>
         </div>
-        <div
-          className={`p-3 rounded-xl group-hover:scale-110 transition-all duration-200`}
-        ></div>
       </div> );
       })}
     </div>
@@ -76,11 +91,3 @@ function StatsGrid() {
 }
 
 export default StatsGrid;
-
-
-
-
-
-
-
-
